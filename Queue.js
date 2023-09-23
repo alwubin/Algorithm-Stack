@@ -7,13 +7,8 @@ class Queue {
     this.tailIndex = 0;
   }
   enqueue(item) { // 원소 삽입
-    if (this.getLength() === 0) {
-      this.items[0] = item;
-    }
-    else {
-      this.tIndex += 1;
-      this.items[this.tIndex] = item;
-    }
+    this.items[this.tailIndex] = item;
+    this.tailIndex++;
   }
   dequeue() { // 원소 삭제 
     const item = this.items[this.headIndex];
